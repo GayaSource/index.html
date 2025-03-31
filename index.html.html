@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflective Input</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    .language-switcher {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .article, .about {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .tags {
+      font-size: 0.9em;
+      color: #666;
+    }
+    .yolo {
+      font-size: 0.8em;
+      color: #aaa;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="language-switcher">
+    <button onclick="switchLang('pt')">🇧🇷</button>
+    <button onclick="switchLang('en')">🇺🇸</button>
+  </div>
+
+  <header>
+    <h1 data-i18n="siteTitle">Reflective Input</h1>
+    <p data-i18n="subtitle">Games, Cognição, Tecnologia e IA com Alma</p>
+  </header>
+
+  <nav>
+    <a href="#" data-i18n="menu.home">Início</a>
+    <a href="#sobre" data-i18n="menu.about">Sobre Mim</a>
+    <a href="https://techquest.itch.io/" target="_blank">Itch.io</a>
+  </nav>
+
+  <div class="container">
+    <div id="sobre" class="about">
+      <h2 data-i18n="about.title">Sobre Mim</h2>
+      <p data-i18n="about.text">
+        Sou Gaya, desenvolvedora em transição de carreira, apaixonada por jogos com alma,
+        inteligência artificial e comportamento humano. Criei o Reflective Input para compartilhar
+        essa jornada entre códigos, cognição e narrativas significativas.
+      </p>
+    </div>
+
+    <div class="article">
+      <h2 data-i18n="articles.npcTitle">O que torna um NPC inesquecível?</h2>
+      <p><strong data-i18n="summary">Resumo:</strong> <span data-i18n="articles.npcSummary">Um olhar sobre empatia, decisões e cognição nos personagens não jogáveis.</span></p>
+      <p class="tags">#ComportamentoGamer #CogniçãoEmJogos #NarrativaDigital</p>
+    </div>
+
+    <div class="article">
+      <h2 data-i18n="articles.feelingsTitle">O jogador sente antes de pensar?</h2>
+      <p><strong data-i18n="summary">Resumo:</strong> <span data-i18n="articles.feelingsSummary">Explorando estímulos sensoriais e processamento emocional durante o gameplay.</span></p>
+      <p class="tags">#CogniçãoEmJogos #IAHumanizada #DesignInterativo</p>
+    </div>
+
+    <div class="article">
+      <h2 data-i18n="articles.aiTitle">IA nos jogos: mais que inimigos inteligentes?</h2>
+      <p><strong data-i18n="summary">Resumo:</strong> <span data-i18n="articles.aiSummary">Como a inteligência artificial pode gerar experiências emocionais profundas nos games.</span></p>
+      <p class="tags">#IAHumanizada #ComportamentoGamer #NarrativaDigital</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Gaya | <span data-i18n="footer.slogan">Conectando tecnologia, cognição e emoção</span></p>
+    <p>
+      <a href="https://github.com/GayaSource" style="color: white; text-decoration: underline;">GitHub</a> |
+      <a href="https://www.artstation.com/gayasketch" style="color: white; text-decoration: underline;">ArtStation</a> |
+      <a href="https://techquest.itch.io/" style="color: white; text-decoration: underline;">Itch.io</a>
+    </p>
+    <p class="yolo">🥚 YOLO mode unlocked — coragem é melhor que perfeição</p>
+  </footer>
+
+  <script>
+    const translations = {
+      pt: {
+        siteTitle: "Reflective Input",
+        subtitle: "Games, Cognição, Tecnologia e IA com Alma",
+        menu: {
+          home: "Início",
+          about: "Sobre Mim"
+        },
+        about: {
+          title: "Sobre Mim",
+          text: "Sou Gaya, desenvolvedora em transição de carreira, apaixonada por jogos com alma, inteligência artificial e comportamento humano. Criei o Reflective Input para compartilhar essa jornada entre códigos, cognição e narrativas significativas."
+        },
+        articles: {
+          npcTitle: "O que torna um NPC inesquecível?",
+          npcSummary: "Um olhar sobre empatia, decisões e cognição nos personagens não jogáveis.",
+          feelingsTitle: "O jogador sente antes de pensar?",
+          feelingsSummary: "Explorando estímulos sensoriais e processamento emocional durante o gameplay.",
+          aiTitle: "IA nos jogos: mais que inimigos inteligentes?",
+          aiSummary: "Como a inteligência artificial pode gerar experiências emocionais profundas nos games."
+        },
+        summary: "Resumo:",
+        footer: {
+          slogan: "Conectando tecnologia, cognição e emoção"
+        }
+      },
+      en: {
+        siteTitle: "Reflective Input",
+        subtitle: "Games, Cognition, Technology and AI with Soul",
+        menu: {
+          home: "Home",
+          about: "About Me"
+        },
+        about: {
+          title: "About Me",
+          text: "I'm Gaya, a developer transitioning careers, passionate about soulful games, artificial intelligence and human behavior. I created Reflective Input to share this journey between code, cognition and meaningful storytelling."
+        },
+        articles: {
+          npcTitle: "What makes an NPC unforgettable?",
+          npcSummary: "A look at empathy, decision-making and cognition in non-playable characters.",
+          feelingsTitle: "Do players feel before they think?",
+          feelingsSummary: "Exploring sensory stimuli and emotional processing during gameplay.",
+          aiTitle: "AI in games: more than just smart enemies?",
+          aiSummary: "How artificial intelligence can generate deep emotional experiences in games."
+        },
+        summary: "Summary:",
+        footer: {
+          slogan: "Connecting technology, cognition and emotion"
+        }
+      }
+    };
+
+    function switchLang(lang) {
+      localStorage.setItem('lang', lang);
+      translatePage(lang);
+    }
+
+    function translatePage(lang) {
+      const content = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const path = el.getAttribute('data-i18n').split('.');
+        let translation = content;
+        path.forEach(key => translation = translation[key]);
+        el.textContent = translation;
+      });
+    }
+
+    const browserLang = navigator.language.startsWith('en') ? 'en' : 'pt';
+    const savedLang = localStorage.getItem('lang') || browserLang;
+    translatePage(savedLang);
+  </script>
+</body>
+</html>
